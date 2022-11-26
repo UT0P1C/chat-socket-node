@@ -12,4 +12,4 @@
    
 
 ## 🔖 Descrição
-  Chat em tempo real feio com a biblioteca socket.io com o propósito de estudar como funciona o protocolo de websockets no Node.js
+  Chat em tempo real feito com a biblioteca socket.io com o propósito de estudar como funciona o protocolo de websockets no Node.js
