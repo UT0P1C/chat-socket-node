@@ -18,13 +18,16 @@ let messages = [];
 
 io.on("connection", socket => {
 	console.log(`${socket.id} connected.`);
+	
+	socket.emit("previousMessage", messages);
 
 	socket.on("sendMessage", data => {
 		console.log(data);
 
 		messages.push(data);
 		
-	})
+		socket.broadcast.emit("receivedMessage", data);
+	});
 });
 
 server.listen(3000, () => {

@@ -27,6 +27,17 @@
 		$('.messages').append(`<div class="message"> <strong>${msg.author}:</strong> ${msg.message} <strong> às </strong> ${msg.date} </div>`)
 	}
 
+	socket.on("receivedMessage", (msg) => {
+		renderMessage(msg);
+	});
+
+	socket.on("previousMessage", (msgs) => {
+		for(msg of msgs){
+			renderMessage(msg);
+		}
+	});
+
+
 	$('#chat').submit(function(e){
 		e.preventDefault();
 
